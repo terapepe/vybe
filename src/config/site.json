@@ -1,8 +1,8 @@
 {
   "brand": "VYBE.FUN",
   "domain": "vybe.fun",
-  "tokenName": "vybecode",
-  "symbol": "VYBE",
+  "tokenName": "VYBE",
+  "symbol": "VY",
 
   "mode": "single",
   "singleNetwork": "robinhood",
