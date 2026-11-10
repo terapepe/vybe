@@ -4,11 +4,11 @@
   "tokenName": "vybecode",
   "symbol": "VYBE",
 
-  "mode": "single",
+  "mode": "multi",
   "singleNetwork": "robinhood",
   "multiOrder": ["solana", "robinhood", "base", "bsc"],
 
-  "evmAddress": "0xC659EE7b68E37CfbB84966C2b1b2140CB1000087",
+  "evmAddress": "",
   "solanaAddress": "",
 
   "x": "vybefun",
