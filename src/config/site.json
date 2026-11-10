@@ -4,12 +4,12 @@
   "tokenName": "vybecode",
   "symbol": "VYBE",
 
-  "mode": "multi",
+  "mode": "single",
   "singleNetwork": "robinhood",
   "multiOrder": ["solana", "robinhood", "base", "bsc"],
 
-  "evmAddress": "0xf60e82A807eFA0CecC4adf8566eDB960c19546eA",
-  "solanaAddress": "GLtTEcyBuhpycFBRczei8UfzdRJZmFNSQHdJGkanq6ea",
+  "evmAddress": "",
+  "solanaAddress": "",
 
   "x": "vybefun",
   "appUrl": "",
