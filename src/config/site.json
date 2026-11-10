@@ -8,8 +8,8 @@
   "singleNetwork": "robinhood",
   "multiOrder": ["solana", "robinhood", "base", "bsc"],
 
-  "evmAddress": "",
-  "solanaAddress": "",
+  "evmAddress": "0x67F32aC50Af3b4a5257729313A4EA48750dD56Ea",
+  "solanaAddress": "DLhqTW4ZdgZt6UcVv26r7DKWMmu531QqT2mabQPpu6ea",
 
   "x": "vybefun",
   "appUrl": "",
