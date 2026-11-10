@@ -1,0 +1,39 @@
+{
+  "brand": "VYBE.FUN",
+  "domain": "vybe.fun",
+  "tokenName": "vybecode",
+  "symbol": "VYBE",
+
+  "mode": "multi",
+  "singleNetwork": "robinhood",
+  "multiOrder": ["solana", "robinhood", "base", "bsc"],
+
+  "evmAddress": "",
+  "solanaAddress": "",
+
+  "x": "vybefun",
+  "appUrl": "",
+
+  "chains": {
+    "solana": {
+      "name": "Solana", "short": "SOL", "color": "#9945FF", "color2": "#14F195", "ca": "",
+      "tagline": "Sub-second battles, near-zero fees",
+      "perks": ["400ms blocks keep the battle clock honest", "Compressed Season Pass NFTs for pennies", "Reputation SBTs as Token-2022 non-transferable mints"]
+    },
+    "robinhood": {
+      "name": "Robinhood", "short": "RH", "color": "#CCFF00", "color2": "#7CFF6B", "ca": "",
+      "tagline": "The trading-native L2 for wager pools",
+      "perks": ["Low-fee L2 built for high-frequency settlement", "EVM pools: one CA shared with Base & BSC", "Pyth-ready price feeds for oracle challenges"]
+    },
+    "base": {
+      "name": "Base", "short": "BASE", "color": "#0052FF", "color2": "#5B8CFF", "ca": "",
+      "tagline": "Onchain builders, onchain glory",
+      "perks": ["Home of the onchain builder crowd", "Smart-wallet onboarding for first-time coders", "Cheap mints for Season Pass & SBT badges"]
+    },
+    "bsc": {
+      "name": "BNB Chain", "short": "BSC", "color": "#F0B90B", "color2": "#FFD966", "ca": "",
+      "tagline": "Degen-grade pools, BNB speed",
+      "perks": ["Deep liquidity and a huge retail audience", "Fast blocks for live spectator prediction markets", "Same EVM contract as Robinhood & Base"]
+    }
+  }
+}
