@@ -2,14 +2,14 @@
   "brand": "VYBE.FUN",
   "domain": "vybe.fun",
   "tokenName": "VYBE",
-  "symbol": "VYB",
+  "symbol": "VBE",
 
-  "mode": "multi",
+  "mode": "single",
   "singleNetwork": "robinhood",
   "multiOrder": ["solana", "robinhood", "base", "bsc"],
 
-  "evmAddress": "0x67F32aC50Af3b4a5257729313A4EA48750dD56Ea",
-  "solanaAddress": "DLhqTW4ZdgZt6UcVv26r7DKWMmu531QqT2mabQPpu6ea",
+  "evmAddress": "",
+  "solanaAddress": "",
 
   "x": "vybefun",
   "appUrl": "",
