@@ -5,10 +5,10 @@
   "symbol": "VBE",
 
   "mode": "single",
-  "singleNetwork": "robinhood",
+  "singleNetwork": "base",
   "multiOrder": ["solana", "robinhood", "base", "bsc"],
 
-  "evmAddress": "",
+  "evmAddress": "0x17d9f278d7f0460ea0b87fd1be99bee6a4b30222",
   "solanaAddress": "",
 
   "x": "vybefun",
