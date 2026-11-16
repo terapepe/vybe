@@ -1,8 +1,8 @@
 {
   "brand": "VYBE.FUN",
   "domain": "vybe.fun",
-  "tokenName": "VYBE",
-  "symbol": "VBE",
+  "tokenName": "VYBEFUN",
+  "symbol": "VYBE",
 
   "mode": "single",
   "singleNetwork": "base",
