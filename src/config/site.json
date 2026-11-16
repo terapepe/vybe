@@ -5,7 +5,7 @@
   "symbol": "VYBE",
 
   "mode": "single",
-  "singleNetwork": "base",
+  "singleNetwork": "robinhood",
   "multiOrder": ["solana", "robinhood", "base", "bsc"],
 
   "evmAddress": "",
