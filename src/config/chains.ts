@@ -1,17 +1,18 @@
 import site from './site.json'
 
-type Overrides = { name?: string; short?: string; color?: string; color2?: string; tagline?: string; ca?: string; perks?: string[] }
+type Overrides = { name?: string; short?: string; color?: string; color2?: string; tagline?: string; ca?: string; perks?: string[]; rpc?: string }
 const OV = (site as { chains?: Record<string, Overrides> }).chains || {}
 
-// Fixed per-network data. Display fields (name/short/color/tagline/perks/ca) are overridden from site.json → chains
+// Fixed per-network data. Display fields (name/short/color/tagline/perks/ca/rpc) are overridden from site.json → chains
+// chainId = 0 for Solana (non-EVM). rpc = public default, override per chain in site.json for production.
 const BASE = [
-  { key: 'solana', icon: '/chains/solana.svg', vm: 'svm', dex: 'solana', explorer: 'https://solscan.io/token/' },
-  { key: 'robinhood', icon: '/chains/robinhood.svg', vm: 'evm', dex: 'robinhood', explorer: 'https://robinhoodchain.blockscout.com/token/' },
-  { key: 'base', icon: '/chains/base.svg', vm: 'evm', dex: 'base', explorer: 'https://basescan.org/token/' },
-  { key: 'bsc', icon: '/chains/bnb.svg', vm: 'evm', dex: 'bsc', explorer: 'https://bscscan.com/token/' },
+  { key: 'solana', icon: '/chains/solana.svg', vm: 'svm', dex: 'solana', explorer: 'https://solscan.io/token/', chainId: 0, native: 'SOL', rpc: 'https://api.mainnet-beta.solana.com', addrUrl: 'https://solscan.io/account/' },
+  { key: 'robinhood', icon: '/chains/robinhood.svg', vm: 'evm', dex: 'robinhood', explorer: 'https://robinhoodchain.blockscout.com/token/', chainId: 4663, native: 'ETH', rpc: 'https://rpc.mainnet.chain.robinhood.com', addrUrl: 'https://robinhoodchain.blockscout.com/address/' },
+  { key: 'base', icon: '/chains/base.svg', vm: 'evm', dex: 'base', explorer: 'https://basescan.org/token/', chainId: 8453, native: 'ETH', rpc: 'https://mainnet.base.org', addrUrl: 'https://basescan.org/address/' },
+  { key: 'bsc', icon: '/chains/bnb.svg', vm: 'evm', dex: 'bsc', explorer: 'https://bscscan.com/token/', chainId: 56, native: 'BNB', rpc: 'https://bsc-dataseed.bnbchain.org', addrUrl: 'https://bscscan.com/address/' },
 ] as const
 
-export type Network = (typeof BASE)[number] & { name: string; short: string; color: string; color2: string; tagline: string; ca: string; perks: string[] }
+export type Network = Omit<(typeof BASE)[number], 'rpc'> & { rpc: string; name: string; short: string; color: string; color2: string; tagline: string; ca: string; perks: string[] }
 
 const clean = (o: Overrides = {}) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== '' && v != null))
 export const networks: Network[] = BASE.map((n) => ({ name: n.key, short: n.key.toUpperCase(), color: '#8B5CF6', color2: '#3B82F6', tagline: '', ca: '', perks: [], ...n, ...clean(OV[n.key]) }))

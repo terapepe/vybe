@@ -3,7 +3,9 @@
 Gamified prompt-coding battles: stake into a pool, vibe-code a dApp with AI against the clock, AI judges score it, winner takes the pool.
 Token: **vybecode ($VYBE)** · X: [@vybefun](https://x.com/vybefun)
 
-Vite + React + TypeScript. Pages: Arena (`#/`) and Docs (`#/docs/<section>`).
+Vite + React + TypeScript. Pages: Arena (`#/`), Play (`#/play`, wallet login) and Docs (`#/docs/<section>`).
+
+Wallet login: EVM via EIP-6963 (MetaMask, Rabby, Coinbase…), Solana via Phantom/Solflare/Backpack — only for networks active in `mode`. Balances (native + `$VYBE`) are read live from RPC with viem (lazy-loaded).
 
 ## Config — everything editable in `src/config/site.json`
 
@@ -16,6 +18,7 @@ Vite + React + TypeScript. Pages: Arena (`#/`) and Docs (`#/docs/<section>`).
 | `solanaAddress` | Solana SPL mint |
 | `chains.<key>.ca` | Optional per-chain CA override (empty → shared address) |
 | `chains.<key>.name/short/color/color2/tagline/perks` | Per-network branding & copy |
+| `chains.<key>.rpc` | Optional RPC override for wallet balances (defaults: public RPCs of each chain) |
 | `x` | X handle (`vybefun`) |
 | `brand`, `tokenName`, `symbol` | Branding |
 
