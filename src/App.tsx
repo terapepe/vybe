@@ -3,10 +3,13 @@ import { accent, accent2 } from './config/chains'
 import { Footer, Nav } from './components/ui'
 import { Home } from './pages/Home'
 import { Docs } from './pages/Docs'
+import { Play } from './pages/Play'
+import { WalletProvider } from './wallet/WalletContext'
+import { WalletModal } from './components/Wallet'
 
 const parse = () => {
   const [, page = '', section = ''] = (window.location.hash || '#/').replace(/^#/, '').split('/')
-  return { page: page === 'docs' ? 'docs' : 'home', section } as const
+  return { page: page === 'docs' ? 'docs' : page === 'play' ? 'play' : 'home', section } as const
 }
 
 export default function App() {
@@ -16,13 +19,16 @@ export default function App() {
     window.addEventListener('hashchange', on)
     return () => window.removeEventListener('hashchange', on)
   }, [])
-  useEffect(() => { if (route.page === 'home') window.scrollTo({ top: 0 }) }, [route.page])
+  useEffect(() => { if (route.page !== 'docs') window.scrollTo({ top: 0 }) }, [route.page])
   return (
+    <WalletProvider>
     <div className="app" style={{ ['--accent' as string]: accent, ['--accent2' as string]: accent2 }}>
       <div className="aura" aria-hidden />
       <Nav page={route.page} />
-      {route.page === 'docs' ? <Docs section={route.section} /> : <Home />}
+      {route.page === 'docs' ? <Docs section={route.section} /> : route.page === 'play' ? <Play /> : <Home />}
       <Footer />
+      <WalletModal />
     </div>
+    </WalletProvider>
   )
 }

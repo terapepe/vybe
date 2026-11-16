@@ -76,7 +76,7 @@ export function Home() {
             AI judges score it, and the <b>winner takes the whole pool</b>.
           </p>
           <div className="cta">
-            <a className="btn primary" href="#/docs/getting-started">Enter the Arena <Icon name="arrow" size={16} /></a>
+            <a className="btn primary" href="#/play">Enter the Arena <Icon name="arrow" size={16} /></a>
             <a className="btn ghost" href="#/docs"><Icon name="book" size={16} /> Read the Docs</a>
           </div>
           <HeroCA />

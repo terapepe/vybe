@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import site from '../config/site.json'
+import { ConnectButton } from './Wallet'
 import { activeNetworks, isSingle, Network, primary, xHandle, xUrl } from '../config/chains'
 
 export function Logo({ size = 34 }: { size?: number }) {
@@ -59,13 +60,14 @@ export function useCopy() {
   return { done, copy }
 }
 
-export function Nav({ page }: { page: 'home' | 'docs' }) {
+export function Nav({ page }: { page: 'home' | 'docs' | 'play' }) {
   return (
     <header className="nav">
       <div className="wrap nav-in">
         <Logo />
         <nav className="nav-links">
           <a href="#/" className={page === 'home' ? 'on' : ''}>Arena</a>
+          <a href="#/play" className={page === 'play' ? 'on' : ''}>Play</a>
           <a href="#/docs" className={page === 'docs' ? 'on' : ''}>Docs</a>
           <a href="#/docs/token">Token</a>
         </nav>
@@ -74,7 +76,8 @@ export function Nav({ page }: { page: 'home' | 'docs' }) {
             <ChainStack size={18} />
             <span>{isSingle ? primary.name : `${activeNetworks.length} chains`}</span>
           </span>
-          <a className="btn sm ghost" href={xUrl} target="_blank" rel="noreferrer"><XIcon size={14} /> @{xHandle}</a>
+          <a className="btn sm ghost x-link" href={xUrl} target="_blank" rel="noreferrer"><XIcon size={14} /> @{xHandle}</a>
+          <ConnectButton />
         </div>
       </div>
     </header>
