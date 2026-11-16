@@ -8,10 +8,10 @@
   "singleNetwork": "base",
   "multiOrder": ["solana", "robinhood", "base", "bsc"],
 
-  "evmAddress": "0x21153e0d2c71ba0b963be7c8ddc685fdb231a801",
+  "evmAddress": "",
   "solanaAddress": "",
 
-  "x": "vybefun",
+  "x": "vybe_fun",
   "appUrl": "",
 
   "chains": {
