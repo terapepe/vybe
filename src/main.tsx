@@ -1,6 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
 import './styles.css'
+import { syncToken } from './hybot'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>)
+// token info from hybot first, then the app (its modules read site.json at import time)
+syncToken().finally(() => import('./boot'))
